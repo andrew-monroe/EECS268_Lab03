@@ -7,9 +7,9 @@ class Executive
 {
     public:
         void run();
-        
-    private:
 
+    private:
+        int menu();
 };
 
 #endif
