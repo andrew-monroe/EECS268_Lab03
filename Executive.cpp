@@ -102,10 +102,37 @@ void Executive::quadraticSolver()
     std::cout << "Enter A, B, and C:" << std::endl;
     std::cout << "A: ";
     std::cin >> a;
+    while ( std::cin.fail() )
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "A: ";
+        std::cin >> a;
+    }
     std::cout << "B: ";
     std::cin >> b;
+    while ( std::cin.fail() )
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "B: ";
+        std::cin >> b;
+    }
     std::cout << "C: ";
     std::cin >> c;
+    while ( std::cin.fail() )
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "C: ";
+        std::cin >> c;
+    }
     std::cout << std::endl;
 
 
@@ -141,16 +168,45 @@ void Executive::intersectFinder()
     << std::endl;
     std::cout << "d: ";
     std::cin >> d;
+    while ( std::cin.fail() )
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "d: ";
+        std::cin >> d;
+    }
     std::cout << "e: ";
     std::cin >> e;
+    while ( std::cin.fail() )
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "e: ";
+        std::cin >> e;
+    }
     std::cout << "f: ";
     std::cin >> f;
+    while ( std::cin.fail() )
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "f: ";
+        std::cin >> f;
+    }
     std::cout << std::endl;
 
     intersections = Utility.intersectLineUnitCircle(d, e, f, pts);
 
-    std::cout << "There are " << intersections << " intersections."
-    << std::endl;
+    if(intersections == 1)
+        std::cout << "There is one intersecion:" << std::endl;
+    else
+        std::cout << "There are two intersections:" << std::endl;
 
     for (int x = 0; x < intersections; x++)
     {
@@ -177,8 +233,37 @@ void Executive::roomSizeFinder()
     std::cout << "Room Dimension Finder:" << std::endl;
     std::cout << "Enter desired room area: ";
     std::cin >> area;
+    while ( std::cin.fail() || area < 0)
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "Enter desired room area: ";
+        std::cin >> area;
+    }
     std::cout << "Enter extra distance width has over length: ";
     std::cin >> extra;
+    while ( std::cin.fail() || extra < 0)
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "Enter extra distance width has over length: ";
+        std::cin >> extra;
+    }
+    std::cout << "Enter minimum length for the room: ";
+    std::cin >> minLength;
+    while ( std::cin.fail() )
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        std::cout << "Bad input, try again." << std::endl << std::endl;
+        std::cout << "Enter minimum length for the room: ";
+        std::cin >> minLength;
+    }
     std::cout << std::endl;
 
     Utility.roomDimensions(area, extra, minLength, width, length);
