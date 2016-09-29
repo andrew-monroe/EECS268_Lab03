@@ -19,7 +19,7 @@ public:
 	 *  @throw NoIntersection if the line does not intersect the circle
 	 *  @return the number of roots found (1 if the discriminant is zero; 2 otherwise)
 	 */
-	virtual int intersectLineUnitCircle(double d, double e, double f, double xy[2][])
+	virtual int intersectLineUnitCircle(double d, double e, double f, double** xy)
 			throw (NoIntersection) = 0;
 
 	/** Compute the dimensions of a rectangular room such that the area of the room is "Area",
