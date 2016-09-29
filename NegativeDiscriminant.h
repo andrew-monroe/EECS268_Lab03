@@ -1,7 +1,7 @@
 
 
-#ifndef "NegativeDiscriminant_h"
-#define "NegativeDiscriminant_h"
+#ifndef NegativeDiscriminant_h
+#define NegativeDiscriminant_h
 
 #include <stdexcept>
 
@@ -11,4 +11,4 @@ class NegativeDiscriminant: public std::runtime_error
         NegativeDiscriminant(const char* msg);
 };
 
-#define
+#endif
