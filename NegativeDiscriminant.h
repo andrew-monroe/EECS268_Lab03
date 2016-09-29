@@ -1,4 +1,9 @@
-
+/**
+*	@file NegativeDiscriminant.h
+*	@author Andy Monroe
+*	@date 09-29-2016
+*	@brief Header file for NegativeDiscriminant exception
+*/
 
 #ifndef NegativeDiscriminant_h
 #define NegativeDiscriminant_h

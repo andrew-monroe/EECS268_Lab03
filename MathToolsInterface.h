@@ -1,4 +1,9 @@
-// MathToolsInterface.h - An interface for various mathematical tools
+/**
+*	@file MathToolsInterface.h
+*	@author Andy Monroe
+*	@date 09-29-2016
+*	@brief An interface for various mathematical tools.
+*/
 
 #ifndef MATHTOOLSINTERFACE_H
 #define MATHTOOLSINTERFACE_H
