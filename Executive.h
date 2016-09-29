@@ -10,6 +10,9 @@ class Executive
 
     private:
         int menu();
+        void quadraticSolver();
+        void intersectFinder();
+        void roomSizeFinder();
 };
 
 #endif
