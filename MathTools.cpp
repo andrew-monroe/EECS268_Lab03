@@ -29,7 +29,7 @@ int MathTools::intersectLineUnitCircle(double d, double e, double f, double** xy
     //if NegativeDiscriminant exception is thrown, it will be caught and a
     //  NoIntersection exception will be thrown
     try {
-        intersections = solveQuadratic(d*d + e*e, e*f, f*f - d*d, xy[0]);
+        intersections = solveQuadratic(d*d + e*e, 2*e*f, f*f - d*d, xy[0]);
     }
     catch (NegativeDiscriminant& e)
     {
@@ -78,7 +78,7 @@ void MathTools::roomDimensions(double Area, double Extra, double minRequiredLeng
         {
             //throws exception if possible length isn't longer than user's
             //  minimum length
-            if (possibleLengths[0] <= minRequiredLength)
+            if (possibleLengths[0] < minRequiredLength)
             {
                 throw(CannotDetermineRoomDimensions("ERROR: Cannot calculate valid room dimensions."));
             }
@@ -91,8 +91,8 @@ void MathTools::roomDimensions(double Area, double Extra, double minRequiredLeng
         {
             //throws exception if neither possible length is longer than user's
             //  minimum length
-            if (possibleLengths[0] <= minRequiredLength &&
-                    possibleLengths[1] <= minRequiredLength)
+            if (possibleLengths[0] < minRequiredLength &&
+                    possibleLengths[1] < minRequiredLength)
             {
                 throw(CannotDetermineRoomDimensions("ERROR: Cannot calculate valid room dimensions."));
             }
