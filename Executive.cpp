@@ -333,7 +333,7 @@ void Executive::roomSizeFinder()
     std::cout << "Enter minimum length for the room: ";
     std::cin >> minLength;
     //validity check
-    while ( std::cin.fail() )
+    while ( std::cin.fail() || minLength < 0)
     {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
