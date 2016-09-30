@@ -80,6 +80,8 @@ void MathTools::roomDimensions(double Area, double Extra, double minRequiredLeng
             //  minimum length
             if (possibleLengths[0] < minRequiredLength)
             {
+                delete[] possibleLengths;
+                
                 throw(CannotDetermineRoomDimensions("ERROR: Cannot calculate valid room dimensions."));
             }
             else
@@ -94,6 +96,8 @@ void MathTools::roomDimensions(double Area, double Extra, double minRequiredLeng
             if (possibleLengths[0] < minRequiredLength &&
                     possibleLengths[1] < minRequiredLength)
             {
+                delete[] possibleLengths;
+                
                 throw(CannotDetermineRoomDimensions("ERROR: Cannot calculate valid room dimensions."));
             }
             else if (possibleLengths[0] < minRequiredLength)
@@ -113,6 +117,8 @@ void MathTools::roomDimensions(double Area, double Extra, double minRequiredLeng
     }
     catch(NegativeDiscriminant& e)
     {
+        delete[] possibleLengths;
+        
         throw(CannotDetermineRoomDimensions("ERROR: Cannot calculate valid room dimensions."));
     }
 

@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <limits>
 #include "Executive.h"
 #include "MathTools.h"
 #include "NegativeDiscriminant.h"
